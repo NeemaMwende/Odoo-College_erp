@@ -1,7 +1,7 @@
 {
     'name': 'College ERP',
     'version': '18.0.1.1',
-    'license' : 'LGDL-3',
+    'license' : 'LGPL-3',
     'author': 'Neema Mwende',
     'category': 'Education',
     'summary': 'An erp for college education',
@@ -11,6 +11,5 @@
     'sequence': 1,
     'application': True,
     'installable': True,
-    'auto_install': True,
-
+    'auto_install': True
 }
