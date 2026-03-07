@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- Top-level menu -->
+    <menuitem id="menu_metabase_jwt_root"
+              name="Metabase"
+              sequence="90"
+              web_icon="metabase_connector2,static/description/icon.svg"/>
+
+    <!-- Configuration sub-menu -->
+    <menuitem id="menu_metabase_jwt_config"
+              name="Configuration"
+              parent="menu_metabase_jwt_root"
+              sequence="100"
+              action="action_metabase_jwt_config"
+              groups="base.group_system"/>
+
+    <!-- Dashboards sub-menu -->
+    <menuitem id="menu_metabase_jwt_dashboards"
+              name="Dashboards"
+              parent="menu_metabase_jwt_root"
+              sequence="10"
+              action="action_metabase_jwt_dashboard"
+              groups="base.group_system"/>
+
+</odoo>

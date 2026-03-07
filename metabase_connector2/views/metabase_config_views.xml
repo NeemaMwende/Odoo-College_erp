@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- ============================================================
+         Metabase JWT Configuration Form View
+    ============================================================ -->
+    <record id="view_metabase_jwt_config_form" model="ir.ui.view">
+        <field name="name">metabase.jwt.config.form</field>
+        <field name="model">metabase.jwt.config</field>
+        <field name="arch" type="xml">
+            <form string="Metabase JWT Configuration">
+                <header>
+                    <button name="action_check_connection"
+                            string="Check Connection"
+                            type="object"
+                            class="btn-primary"
+                            icon="fa-plug"/>
+                    <button name="action_fetch_dashboards"
+                            string="Fetch Dashboards"
+                            type="object"
+                            class="btn-primary"
+                            icon="fa-download"/>
+                </header>
+                <sheet>
+                    <div class="oe_title">
+                        <label for="name"/>
+                        <h1>
+                            <field name="name"
+                                   placeholder="e.g. Metabase Production"
+                                   required="1"/>
+                        </h1>
+                    </div>
+                    <group>
+                        <group string="Connection">
+                            <field name="metabase_url"
+                                   placeholder="http://localhost:3000"
+                                   required="1"/>
+                            <field name="metabase_api_key"
+                                   password="True"/>
+                        </group>
+                        <group string="Embedding">
+                            <field name="secret_key"
+                                   password="True"
+                                   required="1"/>
+                            <field name="token_expiry_minutes"/>
+                        </group>
+                    </group>
+
+                    <notebook>
+                        <page string="Dashboards" name="dashboards">
+                            <field name="dashboard_ids"
+                                   context="{'default_config_id': id}">
+                                <list string="Dashboards" editable="bottom">
+                                    <field name="name"/>
+                                    <field name="metabase_id"/>
+                                    <field name="enable_title"/>
+                                    <field name="enable_download"/>
+                                    <button name="action_open_embedded"
+                                            type="object"
+                                            icon="fa-eye"
+                                            title="View embedded in Odoo"/>
+                                    <button name="action_open_dashboard"
+                                            type="object"
+                                            icon="fa-external-link"
+                                            title="Open in new tab"/>
+                                </list>
+                            </field>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- ============================================================
+         Metabase JWT Configuration List View
+    ============================================================ -->
+    <record id="view_metabase_jwt_config_list" model="ir.ui.view">
+        <field name="name">metabase.jwt.config.list</field>
+        <field name="model">metabase.jwt.config</field>
+        <field name="arch" type="xml">
+            <list string="Metabase JWT Configurations">
+                <field name="name"/>
+                <field name="metabase_url"/>
+            </list>
+        </field>
+    </record>
+
+    <!-- ============================================================
+         Metabase JWT Configuration Action
+    ============================================================ -->
+    <record id="action_metabase_jwt_config" model="ir.actions.act_window">
+        <field name="name">Metabase JWT Configuration</field>
+        <field name="res_model">metabase.jwt.config</field>
+        <field name="view_mode">list,form</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Create your first Metabase JWT configuration
+            </p>
+            <p>
+                Configure the connection to your Metabase instance using JWT
+                signed embedding for full interactive dashboards with drill-down.
+            </p>
+        </field>
+    </record>
+
+</odoo>

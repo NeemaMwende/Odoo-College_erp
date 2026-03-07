@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- ============================================================
+         Metabase JWT Dashboard Form View
+    ============================================================ -->
+    <record id="view_metabase_jwt_dashboard_form" model="ir.ui.view">
+        <field name="name">metabase.jwt.dashboard.form</field>
+        <field name="model">metabase.jwt.dashboard</field>
+        <field name="arch" type="xml">
+            <form string="Dashboard">
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="name"/>
+                            <field name="metabase_id"/>
+                        </group>
+                        <group>
+                            <field name="config_id"/>
+                            <field name="enable_title"/>
+                            <field name="enable_download"/>
+                        </group>
+                    </group>
+
+                    <notebook>
+                        <page string="Menus" name="menus">
+                            <field name="menu_ids">
+                                <list editable="bottom">
+                                    <field name="name"/>
+                                    <field name="sequence"/>
+                                    <field name="parent_menu_id"/>
+                                    <field name="group_ids"
+                                           widget="many2many_tags"/>
+                                    <button name="action_generate_menu"
+                                            type="object"
+                                            string="Generate Menu"
+                                            icon="fa-plus-square"
+                                            title="Create / update menu item"/>
+                                    <button name="action_remove_menu"
+                                            type="object"
+                                            icon="fa-trash"
+                                            title="Remove generated menu"/>
+                                </list>
+                            </field>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- ============================================================
+         Metabase JWT Dashboard List View
+    ============================================================ -->
+    <record id="view_metabase_jwt_dashboard_list" model="ir.ui.view">
+        <field name="name">metabase.jwt.dashboard.list</field>
+        <field name="model">metabase.jwt.dashboard</field>
+        <field name="arch" type="xml">
+            <list string="Dashboards">
+                <field name="name"/>
+                <field name="metabase_id"/>
+                <field name="config_id"/>
+                <button name="action_open_embedded"
+                        type="object"
+                        icon="fa-eye"
+                        title="View embedded in Odoo"/>
+                <button name="action_open_dashboard"
+                        type="object"
+                        icon="fa-external-link"
+                        title="Open in new tab"/>
+            </list>
+        </field>
+    </record>
+
+    <!-- ============================================================
+         Metabase JWT Dashboard Action
+    ============================================================ -->
+    <record id="action_metabase_jwt_dashboard" model="ir.actions.act_window">
+        <field name="name">Metabase Dashboards</field>
+        <field name="res_model">metabase.jwt.dashboard</field>
+        <field name="view_mode">list,form</field>
+    </record>
+
+</odoo>

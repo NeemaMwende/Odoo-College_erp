@@ -1,0 +1,7 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_metabase_jwt_config_admin,metabase.jwt.config admin,model_metabase_jwt_config,base.group_system,1,1,1,1
+access_metabase_jwt_config_user,metabase.jwt.config user,model_metabase_jwt_config,base.group_user,1,0,0,0
+access_metabase_jwt_dashboard_admin,metabase.jwt.dashboard admin,model_metabase_jwt_dashboard,base.group_system,1,1,1,1
+access_metabase_jwt_dashboard_user,metabase.jwt.dashboard user,model_metabase_jwt_dashboard,base.group_user,1,0,0,0
+access_metabase_jwt_dashboard_menu_admin,metabase.jwt.dashboard.menu admin,model_metabase_jwt_dashboard_menu,base.group_system,1,1,1,1
+access_metabase_jwt_dashboard_menu_user,metabase.jwt.dashboard.menu user,model_metabase_jwt_dashboard_menu,base.group_user,1,0,0,0

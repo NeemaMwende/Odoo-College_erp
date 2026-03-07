@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<templates xml:space="preserve">
+
+    <t t-name="metabase_connector2.MetabaseJwtDashboardView">
+        <div class="o_metabase_dashboard_container o_action">
+
+            <!-- Header bar -->
+            <div class="o_metabase_dashboard_header">
+                <i class="fa fa-bar-chart fa-lg"/>
+                <h4 t-esc="dashboardName"/>
+                <a class="btn-open-metabase"
+                   href="#"
+                   t-on-click.prevent="openInNewTab">
+                    <i class="fa fa-external-link me-1"/>
+                    Open in Metabase
+                </a>
+            </div>
+
+            <!-- Iframe wrapper -->
+            <div class="o_metabase_iframe_wrapper">
+
+                <!-- Loading overlay -->
+                <div t-if="state.loading" class="o_metabase_loading">
+                    <div class="spinner-border" role="status">
+                        <span class="visually-hidden">Loading...</span>
+                    </div>
+                    <span>Loading dashboard...</span>
+                </div>
+
+                <!-- Error state -->
+                <div t-if="state.error" class="o_metabase_no_embed">
+                    <i class="fa fa-exclamation-triangle"/>
+                    <span>Could not load the dashboard. Check your Metabase URL and Secret Key.</span>
+                </div>
+
+                <!-- Embedded Metabase iframe -->
+                <iframe t-if="state.embedUrl"
+                        t-ref="iframe"
+                        t-att-src="state.embedUrl"
+                        class="o_metabase_iframe"
+                        allowfullscreen="true"
+                        frameborder="0"/>
+
+                <div t-if="!state.embedUrl and !state.loading and !state.error"
+                     class="o_metabase_no_embed">
+                    <i class="fa fa-question-circle"/>
+                    <span>No dashboard configured.</span>
+                </div>
+
+            </div>
+        </div>
+    </t>
+
+</templates>
