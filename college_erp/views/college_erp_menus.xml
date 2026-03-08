@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!--main menu-->
+<odoo>
+    <menuitem id="menu_college_erp_root" name="College ERP" sequence="1"/>
+</odoo>

@@ -9,6 +9,7 @@
     'website': 'https://github.com/NeemaMwende',
     'maintainer': 'Mi casa su casa <neemamwende009@gmail.com>',
     'sequence': 1,
+    'data': ['views/college_erp_menus.xml'],
     'application': True,
     'installable': True,
     'auto_install': True
