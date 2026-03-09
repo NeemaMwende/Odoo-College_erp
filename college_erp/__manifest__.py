@@ -1,7 +1,7 @@
 {
     'name': 'College ERP',
     'version': '18.0.1.1',
-    'license' : 'LGPL-3',
+    'license': 'LGPL-3',
     'author': 'Neema Mwende',
     'category': 'Education',
     'summary': 'An erp for college education',
@@ -9,7 +9,10 @@
     'website': 'https://github.com/NeemaMwende',
     'maintainer': 'Mi casa su casa <neemamwende009@gmail.com>',
     'sequence': 1,
-    'data': ['views/college_erp_menus.xml'],
+    'data': [
+        'views/college_student.xml',
+        'views/college_erp_menus.xml',
+    ],
     'application': True,
     'installable': True,
     'auto_install': True
