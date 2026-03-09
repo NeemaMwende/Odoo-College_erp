@@ -1,5 +1,12 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!--main menu-->
 <odoo>
+    <!--    main menu-->
     <menuitem id="menu_college_erp_root" name="College ERP" sequence="1"/>
+    <!--    submenu without action-->
+    <menuitem id="menu_college_erp_root_student" name="Student" parent="menu_college_erp_root" sequence="1"/>
+    <!--    submenu with action-->
+    <menuitem id="menu_college_erp_root_student_student" name="Student" parent="menu_college_erp_root_student" sequence="2"/>
+    <menuitem id="menu_college_erp_root_student_admission" name="Admission" parent="menu_college_erp_root" sequence="3"/>
+
 </odoo>
