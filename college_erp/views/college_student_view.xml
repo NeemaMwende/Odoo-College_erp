@@ -16,12 +16,25 @@
                             <field name="first_name"/>
                             <field name="last_name"/>
                             <field name="email"/>
-                        </group>
-                        <group>
                             <field name="mother_name"/>
                             <field name="father_name"/>
-                            <field name="contact_address"/>
+                        </group>
+                        <group>
+
                             <field name="phone"/>
+                            <field name="contact_address"/>
+                            <field name="same_as_contact" widget="boolean_toggle"/>
+                            <span class="o_form_label o_td_label o_address_type fw-bold" invisible="same_as_contact">
+                                Permanent Address
+                            </span>
+                            <div class="o_address_format" invisible="same_as_contact">
+                                <field name="street" placeholder="Street..." class="o_address_street"/>
+                                <field name="street2" placeholder="Street 2..." class="o_address_street"/>
+                                <field name="city" placeholder="City" class="o_address_city"/>
+                                <field name="state_id" class="o_address_state" placeholder="State"/>
+                                <field name="zip" placeholder="ZIP" class="o_address_zip"/>
+                                <field name="country_id" placeholder="Country" group="base.group_user"/>
+                            </div>
                         </group>
                     </group>
                 </sheet>
