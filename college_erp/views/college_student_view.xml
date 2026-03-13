@@ -8,6 +8,7 @@
         <field name="arch" type="xml">
             <form>
                 <sheet>
+                    <field name="image_1920" class="oe_avatar" widget="image"/>
                     <group>
                         <group>
 

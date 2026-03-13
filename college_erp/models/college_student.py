@@ -21,3 +21,4 @@ class CollegeStudent(models.Model):
     email = fields.Char(string="Email")
     phone = fields.Char(string="Phone")
     same_as_contact = fields.Boolean(string="Same As Contact", default=True)
+    image_1920 = fields.Image(string="Student Image")
