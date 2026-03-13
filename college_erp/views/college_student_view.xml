@@ -6,7 +6,7 @@
         <field name="name">college.student.view.form</field>
         <field name="model">college.student</field>
         <field name="arch" type="xml">
-            <form>
+            <form create="true" edit="false" delete="false">
                 <sheet>
                     <field name="image_1920" class="oe_avatar" widget="image"/>
                     <group>

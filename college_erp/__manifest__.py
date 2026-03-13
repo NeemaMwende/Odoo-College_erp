@@ -10,6 +10,7 @@
     'maintainer': 'Mi casa su casa <neemamwende009@gmail.com>',
     'sequence': 1,
     'data': [
+        'security/college_erp_security.xml',
         'security/ir.model.access.csv',
         'views/college_student_view.xml',
         'views/college_erp_menus.xml',
